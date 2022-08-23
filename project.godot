@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="FPS Template"
+config/name="BlueMist"
 run/main_scene="res://Prototype.tscn"
 
 [audio]

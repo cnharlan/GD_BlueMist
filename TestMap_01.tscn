@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Materials/Material_001.material" type="Material" id=2]
+[ext_resource path="res://Materials/mat_checkered_01.tres" type="Material" id=2]
 [ext_resource path="res://Player/Camera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Menu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://PSX Shader/world/crystal/crystal_mesh.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -16,16 +17,23 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.42992, 0 )
 LockMouse = false
 DevMode = true
 
+[node name="crystal" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.110605, 0.0777995, 0.990815, -0.0426305, 0.996385, -0.0734781, -0.99295, -0.0341119, 0.113521, 8.52412, 0.270931, 5.10602 )
+
+[node name="crystal2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.112893, 0.0198088, 0.99341, -0.0361358, 0.999222, -0.0158182, -0.99295, -0.0341119, 0.113521, 5.39686, 0.270983, -7.04618 )
+
+[node name="crystal3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.112823, 0.0217446, 0.993377, -0.0363544, 0.999181, -0.0177426, -0.99295, -0.0341119, 0.113521, -7.41277, 0.271166, 7.42531 )
+
 [node name="CSGMesh" type="CSGMesh" parent="."]
 transform = Transform( 12.1076, 0, 0, 0, 0.270921, 0, 0, 0, 12.1076, 0, 0, 0 )
 mesh = SubResource( 1 )
 material = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="CSGMesh"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="CSGMesh/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Camera" parent="." instance=ExtResource( 3 )]

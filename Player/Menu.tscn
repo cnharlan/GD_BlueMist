@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/fps logo.png" type="Texture" id=1]
 [ext_resource path="res://UI/Pause/Credits.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/Pause/Theme/Theme.tres" type="Theme" id=3]
 [ext_resource path="res://UI/Pause/SFX/select.ogg" type="AudioStream" id=4]
-[ext_resource path="res://UI/Pause/Credits.gd" type="Script" id=5]
 [ext_resource path="res://mainmenu.gd" type="Script" id=6]
 
 [node name="Menu" type="CanvasLayer"]
@@ -72,30 +71,16 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
-margin_left = 931.0
-margin_top = 4.0
-margin_right = 1269.0
-margin_bottom = 194.0
+margin_left = 117.0
+margin_top = 43.0
+margin_right = 455.0
+margin_bottom = 233.0
 texture = ExtResource( 1 )
 expand = true
+stretch_mode = 1
 
-[node name="Credits" type="VBoxContainer" parent="." instance=ExtResource( 2 )]
+[node name="Credits" parent="." instance=ExtResource( 2 )]
 visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -317.5
-margin_top = -366.5
-margin_right = 317.5
-margin_bottom = 366.5
-theme = ExtResource( 3 )
-alignment = 1
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": "Special thanks to these lovely people for maing godot accesible and easy to learn <3"
-}
 
 [node name="SelectAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
@@ -105,4 +90,3 @@ volume_db = -10.0
 [connection signal="pressed" from="Control/VBoxContainer/Button2" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Button3" to="." method="Credits"]
 [connection signal="pressed" from="Control/VBoxContainer/Button4" to="." method="_on_Quit_pressed"]
-[connection signal="tree_entered" from="Credits" to="Credits" method="_on_Credits_tree_entered"]

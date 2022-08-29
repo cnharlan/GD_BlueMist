@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://PSX Shader/world/orbit_camera.gd" type="Script" id=1]
 [ext_resource path="res://PSX Shader/world/light-shaft.glb" type="PackedScene" id=2]
@@ -11,9 +11,13 @@
 [ext_resource path="res://PSX Shader/world/object_metal_mat.tres" type="Material" id=9]
 [ext_resource path="res://PSX Shader/shaders/psx_light-volume.shader" type="Shader" id=10]
 [ext_resource path="res://PSX Shader/world/crystal/crystal_mesh.tscn" type="PackedScene" id=11]
+[ext_resource path="res://PSX Shader/post_process/pp_dither.tres" type="Material" id=12]
 [ext_resource path="res://PSX Shader/world/particle_reset.gd" type="Script" id=13]
 [ext_resource path="res://PSX Shader/world/bevel-box.glb" type="PackedScene" id=14]
 [ext_resource path="res://PSX Shader/world/world_env.tres" type="Environment" id=15]
+[ext_resource path="res://PSX Shader/post_process/pp_blur_mat.tres" type="Material" id=16]
+[ext_resource path="res://PSX Shader/post_process/pp_lcd_mat.tres" type="Material" id=17]
+[ext_resource path="res://PSX Shader/post_process/options.gd" type="Script" id=18]
 
 [sub_resource type="ParticlesMaterial" id=1]
 direction = Vector3( 1, 1, 1 )
@@ -204,6 +208,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0109267, 2.05731, 0.0147681 
 
 [node name="Cube" parent="light-shaft" index="0"]
 material/0 = SubResource( 6 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.45601, 5.78587 )
+environment = ExtResource( 15 )
+script = ExtResource( 18 )
+post_process_lcd = ExtResource( 17 )
+post_process_blur = ExtResource( 16 )
+post_process_dither_band = ExtResource( 12 )
+environment = ExtResource( 15 )
 
 [editable path="bevel-box"]
 [editable path="light-shaft"]

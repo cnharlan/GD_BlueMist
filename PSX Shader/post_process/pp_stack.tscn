@@ -4,9 +4,11 @@
 [ext_resource path="res://PSX Shader/post_process/pp_blur_mat.tres" type="Material" id=2]
 [ext_resource path="res://PSX Shader/post_process/pp_lcd_mat.tres" type="Material" id=3]
 [ext_resource path="res://Prototype.tscn" type="PackedScene" id=4]
-[ext_resource path="res://PSX Shader/post_process/GUILayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Menu.tscn" type="PackedScene" id=6]
 
 [node name="Node" type="Node"]
+
+[node name="Menu" parent="." instance=ExtResource( 6 )]
 
 [node name="PSXLayer" type="CanvasLayer" parent="."]
 layer = 0
@@ -61,7 +63,3 @@ audio_listener_enable_2d = true
 audio_listener_enable_3d = true
 
 [node name="Blocks" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay/Viewport/DitherBanding/Viewport" instance=ExtResource( 4 )]
-
-[node name="GUILayer" parent="." instance=ExtResource( 5 )]
-
-[editable path="GUILayer"]

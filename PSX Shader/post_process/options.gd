@@ -10,7 +10,7 @@ export(Environment) var environment
 #At start of scene, set inherited value for fov(Frames) to 24
 #Wondering why it's called FOV when it's affecting FPS -Chase
 func _ready():
-	set_fov(24)
+	set_fov(60)
 
 #Sets engine value for target fps to an inherited number.
 func set_fov(value: int):

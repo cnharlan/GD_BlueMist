@@ -21,7 +21,7 @@ mouse_filter = 2
 stretch = true
 
 [node name="Viewport" type="Viewport" parent="PSXLayer/BlurPostProcess"]
-size = Vector2( 1280, 720 )
+size = Vector2( 960, 720 )
 handle_input_locally = false
 render_target_update_mode = 3
 audio_listener_enable_2d = true
@@ -38,7 +38,7 @@ __meta__ = {
 }
 
 [node name="Viewport" type="Viewport" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay"]
-size = Vector2( 1280, 720 )
+size = Vector2( 960, 720 )
 handle_input_locally = false
 render_target_update_mode = 3
 audio_listener_enable_2d = true
@@ -56,7 +56,7 @@ __meta__ = {
 }
 
 [node name="Viewport" type="Viewport" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay/Viewport/DitherBanding"]
-size = Vector2( 426, 240 )
+size = Vector2( 320, 240 )
 handle_input_locally = false
 render_target_update_mode = 3
 audio_listener_enable_2d = true
